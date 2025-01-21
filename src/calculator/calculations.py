@@ -27,7 +27,7 @@ The module contains the following functions:
 
 def add(a: float | int, b: float | int) -> float:
     """
-    Compute and return the sum of two numbers.
+    Add two numbers.
 
     Examples
     --------
@@ -39,9 +39,9 @@ def add(a: float | int, b: float | int) -> float:
     Parameters
     ----------
     a : float
-        A number representing the first addend in the addition.
+        The first number to add.
     b : float
-        A number representing the second addend in the addition.
+        The second number to add.
 
     Returns
     -------
@@ -52,14 +52,81 @@ def add(a: float | int, b: float | int) -> float:
 
 
 def subtract(a, b):
+    """
+    Subract one number from another
+
+    Examples
+    --------
+    >>> subtract(4.0, 2.0)
+    2.0
+    >>> subtract(4, 2)
+    2.0
+
+    Parameters
+    ----------
+    a : float
+        The number to subtract from.
+    b : float
+        The number to subtract.
+
+    Returns
+    -------
+    float
+        A number representing the arithmetic difference of `a` and `b`.
+    """
     return float(a - b)
 
 
 def multiply(a, b):
+    """
+    Multiply two numbers.
+
+    Examples
+    --------
+    >>> multiply(4.0, 2.0)
+    8.0
+    >>> multiply(4, 2)
+    8.0
+
+    Parameters
+    ----------
+    a : float
+        The first number to multiply.
+    b : float
+        The second number to multiply.
+
+    Returns
+    -------
+    float
+        A number representing the arithmetic multiplication of `a` and `b`.
+    """
     return float(a * b)
 
 
 def divide(a, b):
+    """
+    Divide one number by another
+
+    Examples
+    --------
+    >>> divide(4.0, 2.0)
+    2.0
+    >>> divide(4, 2)
+    2.0
+
+    Parameters
+    ----------
+    a : float
+        The number to divide.
+    b : float
+        The number to divide by.
+
+    Returns
+    -------
+    float
+        A number representing the arithmetic division of `a` and `b`.
+    """
     if b == 0:
         raise ZeroDivisionError("division by zero")
+
     return float(a / b)

@@ -1,0 +1,22 @@
+# mkdocs.yml
+site_name: Calculator
+site_url: "https://pages/github/mrc/calculator/"
+repo_url: "https://github/mrc/calculator/"
+
+theme:
+  name: material
+
+nav:
+  - index.md
+  - tutorials.md
+  - how-to-guides.md
+  - explanation.md
+  - reference.md
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            docstring_style: numpy

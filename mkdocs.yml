@@ -3,6 +3,9 @@ site_name: Calculator
 site_url: "https://pages/github/mrc/calculator/"
 repo_url: "https://github/mrc/calculator/"
 
+docs_dir: mkdocs
+site_dir: docs
+
 theme:
   name: material
 

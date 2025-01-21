@@ -17,5 +17,3 @@ as well as reasoning about how it was implemented.
 - Help the reader make connections
 - Avoid writing instructions or technical descriptions
     here
-
-::: calculator

@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://pages/github/mrc/calculator/</loc>
+         <loc>https://pages/github/mrc/docs-example/</loc>
          <lastmod>2025-01-21</lastmod>
     </url>
     <url>
-         <loc>https://pages/github/mrc/calculator/explanation/</loc>
+         <loc>https://pages/github/mrc/docs-example/explanation/</loc>
          <lastmod>2025-01-21</lastmod>
     </url>
     <url>
-         <loc>https://pages/github/mrc/calculator/how-to-guides/</loc>
+         <loc>https://pages/github/mrc/docs-example/how-to-guides/</loc>
          <lastmod>2025-01-21</lastmod>
     </url>
     <url>
-         <loc>https://pages/github/mrc/calculator/reference/</loc>
+         <loc>https://pages/github/mrc/docs-example/reference/</loc>
          <lastmod>2025-01-21</lastmod>
     </url>
     <url>
-         <loc>https://pages/github/mrc/calculator/tutorials/</loc>
+         <loc>https://pages/github/mrc/docs-example/tutorials/</loc>
          <lastmod>2025-01-21</lastmod>
     </url>
 </urlset>

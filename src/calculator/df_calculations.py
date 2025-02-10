@@ -1,8 +1,22 @@
 # calculator/calculations.py
+
+import pandera.polars as pa
 import polars as pl
+from pandera.typing.polars import DataFrame
+from pydantic import BaseModel, ConfigDict, validate_call
 
 
-def add_df(a, b):
+class Schema(pa.DataFrameModel):
+    X: str = pa.Field(unique=True)
+    Y: int = pa.Field(in_range={"min_value": 0, "max_value": 10})
+
+
+class DataFrameModel(BaseModel, arbitrary_types_allowed=True):
+    df: DataFrame[Schema]
+
+
+@validate_call(config=ConfigDict(arbitrary_types_allowed=True))
+def add_df(a: DataFrameModel, b: int | float):
     return a.with_columns(Y=pl.col("Y") + pl.lit(b))
 
 

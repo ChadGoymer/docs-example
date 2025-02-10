@@ -1,5 +1,6 @@
 # calculator/calculations.py
-import polars as pl
+from pydantic import Field, validate_call
+from typing_extensions import Annotated
 
 """
 Provide several sample math calculations.
@@ -26,7 +27,8 @@ The module contains the following functions:
 """
 
 
-def add(a: float | int, b: float | int) -> float | int:
+@validate_call
+def add(a: Annotated[float | int, Field(gt=0)], b: float | int) -> float | int:
     """
     Add two numbers.
 
@@ -131,7 +133,3 @@ def divide(a, b):
         raise ZeroDivisionError("division by zero")
 
     return float(a / b)
-
-
-def add_df(a, b):
-    return a.with_columns(Y=pl.col("Y") + pl.lit(b))

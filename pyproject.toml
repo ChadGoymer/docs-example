@@ -7,7 +7,9 @@ authors = [
     { name = "Chad Goymer", email = "chad.goymer@gmail.com" }
 ]
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "polars>=1.21.0",
+]
 
 [build-system]
 requires = ["hatchling"]
@@ -18,4 +20,7 @@ dev = [
     "mkdocs>=1.6.1",
     "mkdocs-material>=9.5.49",
     "mkdocstrings[python]>=0.27.0",
+    "pytest>=8.3.4",
+    "pytest-cov>=6.0.0",
+    "pytest-html>=4.1.1",
 ]

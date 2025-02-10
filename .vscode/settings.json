@@ -1,0 +1,12 @@
+{
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "python.testing.pytestArgs": [
+        "--cov=src",
+        "--cov-report=term-missing",
+        "--cov-report=html:test_report/coverage",
+        "--html=test_report/index.html",
+        // "--self-contained-html",
+        "tests"
+    ]
+}

@@ -2,6 +2,8 @@
 site_name: Calculator
 site_url: "https://pages/github/mrc/docs-example/"
 repo_url: "https://github/mrc/docs-example/"
+docs_dir: mkdocs
+site_dir: docs
 
 docs_dir: mkdocs
 site_dir: docs
@@ -10,7 +12,7 @@ theme:
   name: material
 
 nav:
-  - index.md
+  - README.md
   - tutorials.md
   - how-to-guides.md
   - explanation.md

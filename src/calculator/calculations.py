@@ -1,4 +1,5 @@
 # calculator/calculations.py
+import polars as pl
 
 """
 Provide several sample math calculations.
@@ -25,7 +26,7 @@ The module contains the following functions:
 """
 
 
-def add(a: float | int, b: float | int) -> float:
+def add(a: float | int, b: float | int) -> float | int:
     """
     Add two numbers.
 
@@ -48,7 +49,7 @@ def add(a: float | int, b: float | int) -> float:
     float
         A number representing the arithmetic sum of `a` and `b`.
     """
-    return float(a + b)
+    return a + b
 
 
 def subtract(a, b):
@@ -130,3 +131,7 @@ def divide(a, b):
         raise ZeroDivisionError("division by zero")
 
     return float(a / b)
+
+
+def add_df(a, b):
+    return a.with_columns(Y=pl.col("Y") + pl.lit(b))

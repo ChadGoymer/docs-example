@@ -1,23 +1,20 @@
-# calculator/calculations.py
+# calculator/df_calculations.py
 
 import pandera.polars as pa
 import polars as pl
-from pandera.typing.polars import DataFrame
-from pydantic import BaseModel, ConfigDict, validate_call
-
-
-class Schema(pa.DataFrameModel):
-    X: str = pa.Field(unique=True)
-    Y: int = pa.Field(in_range={"min_value": 0, "max_value": 10})
-
-
-class DataFrameModel(BaseModel, arbitrary_types_allowed=True):
-    df: DataFrame[Schema]
+from pydantic import ConfigDict, validate_call
 
 
 @validate_call(config=ConfigDict(arbitrary_types_allowed=True))
-def add_df(a: DataFrameModel, b: int | float):
-    return a.with_columns(Y=pl.col("Y") + pl.lit(b))
+def add_df(a: pl.DataFrame, b: int | float):
+    schema = pa.DataFrameSchema(
+        {
+            "X": pa.Column(str),
+            "Y": pa.Column(int),
+        }
+    )
+
+    return schema.validate(a).with_columns(Y=pl.col("Y") + pl.lit(b))
 
 
 def add_csv(f, b):
